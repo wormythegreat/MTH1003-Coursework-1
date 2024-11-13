@@ -29,3 +29,6 @@ def mydata(studentID):
     y = abs(T[kperm] - yoff) * (-1)**p
 
     return x, y
+
+def myID ():
+    return 740043893
