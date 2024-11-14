@@ -34,14 +34,17 @@ def myID ():
     return 740043893
 
 def cubicfit (x, y, xhat):
-    def L1(x1,x2,x3,x4,xhat): # where x and y are the points, value is the x part of L(x)
-        return ((xhat-x2)*(xhat-x3)*(xhat-x4))/((x1-x2)*(x1-x3)*(x1-x4))
-    def L2(x1,x2,x3,x4,xhat): # where x and y are the points, value is the x part of L(x)
-        return ((xhat-x1)*(xhat-x3)*(xhat-x4))/((x2-x1)*(x2-x3)*(x2-x4))
-    def L3(x1,x2,x3,x4,xhat): # where x and y are the points, value is the x part of L(x)
-        return ((xhat-x1)*(xhat-x2)*(xhat-x4))/((x3-x1)*(x3-x2)*(x3-x4))
-    def L4(x1,x2,x3,x4,xhat): # where x and y are the points, value is the x part of L(x)
-        return ((xhat-x1)*(xhat-x2)*(xhat-x3))/((x4-x1)*(x4-x2)*(x4-x3))
     x1,x2,x3,x4 = x[0],x[1],x[2],x[3]
     y1,y2,y3,y4 = y[0],y[1],y[2],y[3]
-    pass
+    def L1(xhat): # where x and y are the points, value is the x part of L(x)
+        return ((xhat-x2)*(xhat-x3)*(xhat-x4))/((x1-x2)*(x1-x3)*(x1-x4))
+    def L2(xhat): # where x and y are the points, value is the x part of L(x)
+        return ((xhat-x1)*(xhat-x3)*(xhat-x4))/((x2-x1)*(x2-x3)*(x2-x4))
+    def L3(xhat): # where x and y are the points, value is the x part of L(x)
+        return ((xhat-x1)*(xhat-x2)*(xhat-x4))/((x3-x1)*(x3-x2)*(x3-x4))
+    def L4(xhat): # where x and y are the points, value is the x part of L(x)
+        return ((xhat-x1)*(xhat-x2)*(xhat-x3))/((x4-x1)*(x4-x2)*(x4-x3))
+    
+    
+    yhat = (y1*L1(xhat)) + (y2*L2(xhat)) + (y3*L3(xhat)) + (y4*L4(xhat))
+    return yhat
