@@ -33,8 +33,13 @@ def mydata(studentID):
 def myID ():
     return 740043893
 
-def L(x,y,n,value): # where x and y are the points, n is the nth lagrange polynomial and value is the x part of L(x)
-    pass
-
 def cubicfit (x, y, xhat):
+    def L1(x,y,value): # where x and y are the points, value is the x part of L(x)
+        pass
+    def L2(x,y,value): # where x and y are the points, value is the x part of L(x)
+        pass
+    def L3(x,y,value): # where x and y are the points, value is the x part of L(x)
+        pass
+    def L4(x,y,value): # where x and y are the points, value is the x part of L(x)
+        pass
     pass
