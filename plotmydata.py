@@ -14,6 +14,8 @@ rootX = findroot(x[2],x[3])
 rootY = cubicfit(x[1:5],y[1:5],rootX)
 
 
+plt.axhline(0,0,1,color="grey")
+plt.axvline(0,0,1,color="grey")
 plt.plot(px,py,label="Cubic Function")
 plt.plot(x,y,"ro", label="Points")
 plt.plot(rootX,rootY,"o",color="black",label="Root")
