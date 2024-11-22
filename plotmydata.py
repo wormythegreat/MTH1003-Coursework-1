@@ -57,4 +57,4 @@ plt.legend()
 #Adds a title
 plt.title("Plot of Points")
 #Saves the graph to this directory with . being the current directory
-plt.savefig("./plot.png")
+plt.savefig("./yplot.png")
