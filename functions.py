@@ -48,3 +48,17 @@ def cubicfit (x, y, xhat):
     
     yhat = (y1*L1(xhat)) + (y2*L2(xhat)) + (y3*L3(xhat)) + (y4*L4(xhat))
     return yhat
+
+def findroot(xL, xR):
+    datX,datY = mydata(myID())
+    def f(x):
+        return cubicfit(datX[1:5],datY[1:5],x)
+    error = abs(f(xL))
+    while error > 10e-5:
+        xN = ((xL*f(xR))-(xR*f(xL)))/(f(xR)-f(xL))
+        if f(xN)*f(xL) <= 0:
+            xR = xN
+        else:
+            xL=xN
+        error = abs(f(xL))
+    return xL
