@@ -54,7 +54,7 @@ def findroot(xL, xR):
     def f(x):
         return cubicfit(datX[1:5],datY[1:5],x)
     error = abs(f(xL))
-    while error > 10e-5:
+    while error >= 10e-5:
         xN = ((xL*f(xR))-(xR*f(xL)))/(f(xR)-f(xL))
         if f(xN)*f(xL) <= 0:
             xR = xN
