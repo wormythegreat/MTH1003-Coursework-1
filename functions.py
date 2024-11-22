@@ -60,5 +60,5 @@ def findroot(xL, xR):
             xR = xN
         else:
             xL=xN
-        error = abs(f(xL))
+        error = abs(f(xN))
     return xL
